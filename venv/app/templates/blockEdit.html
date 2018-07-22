@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+<title>区块编辑</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+
+<!-- Custom-Stylesheet-Links -->
+<!-- Bootstrap-CSS --> 	<link rel="stylesheet" href="../static/css/bootstrap.min.css"	type="text/css" media="all">
+<!-- Index-Page-CSS --> <link rel="stylesheet" href="../static/css/style.css?v=2018" 		type="text/css" media="all">
+<!-- Portfolio-CSS --> 	<link rel="stylesheet" href="../static/css/smoothbox.css" 	type="text/css" media="all">
+<!-- //Custom-Stylesheet-Links -->
+
+<!-- Font-Awesome-File-Links -->
+<!-- CSS --> <link rel="stylesheet" href="../static/css/font-awesome.min.css" 	 type="text/css" media="all">
+<!-- TTF --> <link rel="stylesheet" href="../static/fonts/fontawesome-webfont.ttf" type="text/css" media="all">
+<!-- //Font-Awesome-File-Links -->
+
+<!-- Supportive-JavaScript --> <script type="text/javascript" src="../static/js/jquery-2.1.4.min.js"></script>
+
+</head>
+<!-- //Head -->
+
+
+
+<!-- Body -->
+<body>
+
+	<!-- Header -->
+	<div class="header-aits" id="home">
+
+		<div class="header-info-w3ls">
+			<div class="top-contact-aits-w3l container">
+				<p>Call us directly @ +001813799371820 or mail us to <a class="mail" href="mailto:mail@example.com">992999406@qq.com</a> between 10:00 and 16:00</p>
+			</div>
+
+			<!-- Navigation -->
+			<nav class="navbar container navbar-inverse navbar-default">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Logo -->
+					<div class="logo">
+						<a class="navbar-brand logo-w3l button">商品追踪溯源系统</a>
+					</div>
+					<!-- //Logo -->
+				</div>
+
+				<div id="navbar" class="navbar-collapse navbar-right collapse">
+					<ul class="nav navbar-nav navbar-right cross-effect" id="cross-effect">
+						<li><a class="cross-effect nav-link" href="http://127.0.0.1:5000/home">首页</a></li>
+						<li><a class="cross-effect nav-link" href="http://127.0.0.1:5000/blockList">区块二维码</a></li>
+						<li><a class="cross-effect nav-link" href="http://127.0.0.1:5000/show">区块信息</a></li>
+						<li><a class="cross-effect nav-link" href="http://127.0.0.1:5000/productList">商品信息</a></li>
+						<li><a class="cross-effect nav-link" href="http://127.0.0.1:5000/edit">商品编辑</a></li>
+						<li><a class="cross-effect nav-link" href="http://127.0.0.1:5000/blockEdit">区块编辑</a></li>
+						<li><a class="cross-effect nav-link" href="http://127.0.0.1:5000/">退出</a></li>
+					</ul>
+				</div><!-- //Navbar-Collapse -->
+
+			</nav>
+			<!-- //Navigation -->
+
+		</div>
+
+        <div class="details-w3lsagile" id="details">
+		    <div class="container"></div>
+            <div class="clearfix"></div>
+	    </div>
+	<!-- //Header -->
+
+<!-- Details -->
+	<div class="details-w3lsagile" id="details">
+		<div class="container">
+
+             <div class = "row">
+                <div class="col-md-7" style="inset:1px -1px 1px #444, inset -1px 1px 1px #444;">
+
+                </div>
+                <div class="col-md-4 " style="inse: 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <form action="http://127.0.0.1:5000/blockEdit/search" method="post">
+                        <div class="col-md-7" style="inset:1px -1px 1px #444, inset -1px 1px 1px #444;">
+                            <input class="form-control mr-sm-2" type="text" placeholder="商品编号" id="goodID" name="goodID">
+                        </div>
+
+                        <div class="col-md-5" style="inset:1px -1px 1px #444, inset -1px 1px 1px #444;">
+                            <button class="btn btn-info my-2 my-sm-0" type="submit" >查找</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class = "row">
+                <br><br>
+                <h4 class="text-danger">{{warning}}</h4>
+                    <h4 class="text-info">商品编号：{{id}}</h4>
+                <br><br>
+            </div>
+
+            <div class="details-grids-w3lsagile">
+                <div class="col-md-4 col-sm-4 col-sm-offset-4 col-md-offset-4 details-grid-w3lsagile details-grid-1-w3lsagile">
+                    <div class=" details-grid1-w3lsagile">
+                        <div class="details-grid-info-w3lsagile">
+							<table class="table table-bordered">
+                        <thead>
+                        <tr class = "info">
+                            <th class = "text-center" id="block">{{identity}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class = "text-center" type="text"  id="time" name="time">{{time}}</td>
+                            </tr>
+                            <tr>
+                                <td class = "text-center" type="text"  id="place" name="place">{{address}}</td>
+                            </tr>
+                            <tr>
+                                <td class = "text-center"  type="text"  id="person" name="person">{{character}}</td>
+                            </tr>
+                            <tr>
+                                <td class = "text-center" type="text"  id="tele" name="tele">{{contact_info}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br>
+                                    <div class = "text-center" type="text"  id="desc" name="desc">{{description}}</div>
+                                    <br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+						</div>
+						<button class="{{btntype2}}" id="button1" onclick="javascript:window.location.href='http://127.0.0.1:5000/blockEdit/waitToEdit?id={{id}}'">{{button1}}<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+						<button class="{{btntype}}" id="button2" onclick="javascript:window.location.href='http://127.0.0.1:5000/blockEdit/waitToAdd?id={{id}}'">{{button2}}<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+            </div>
+
+
+            <!-- Tooltip-Content -->
+            <div class="tooltip-content">
+
+                <div class="modal fade details-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">{{block}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{img1}}" alt="W3layouts Agileits">
+                                <br>
+                                <h4>{{id}}</h4>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //Tooltip-Content -->
+
+
+
+            <div class="clearfix"></div>
+
+		</div>
+	</div>
+
+	<!-- //Details -->
+
+
+
+
+
+
+
+
+	<!-- Footer -->
+	<div class="footerw3layouts" id="footer">
+		<div class="container">
+
+			<div class="col-md-offset-8 col-sm-offset-8 col-md-2 col-sm-2 footer-grid footer-grid-1">
+				<ul>
+					<li><a class="navbar-link" href="http://127.0.0.1:5000/home">首页</a></li>
+					<li><a class="navbar-link" href="http://127.0.0.1:5000/">退出</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-2 footer-grid footer-grid-2">
+				<ul>
+					<li>基于区块链的</li>
+					<li>商品追踪溯源系统</li>
+				</ul>
+			</div>
+
+
+			<div class="clearfix"></div>
+
+			<!-- Copyright -->
+			<div class="copyright">
+				<p>Copyright &copy; 2018.Team 332 All rights reserved.</p>
+			</div>
+			<!-- //Copyright -->
+
+		</div>
+	</div>
+	<!-- Footer -->
+
+
+
+	<!-- Custom-JavaScript-File-Links -->
+
+
+		<!-- Necessary-JS-File-For-Bootstrap --> <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
+		<!-- Slider-JavaScript -->
+			<script src="../static/js/responsiveslides.min.js"></script>
+			<script>
+				$(function () {
+					$("#slider1, #slider2").responsiveSlides({
+						auto: true,
+						nav: true,
+						speed: 1500,
+						namespace: "callbacks",
+						pager: true,
+					});
+				});
+			</script>
+		<!-- //Slider-JavaScript -->
+
+
+
+
+</body>
+<!-- //Body -->
+
+</html>

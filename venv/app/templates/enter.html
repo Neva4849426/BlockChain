@@ -1,0 +1,38 @@
+{% extends 'bootstrap/base.html' %}  #声明继承
+{% import '_macro.html' as ui %}
+
+{% block title %}{{ title_name }}{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="container">
+            <h1>{{ self.title() }}</h1>
+        </div>
+    </div>
+
+
+<div class="jumbotron">
+  <h1 class="display-3">欢迎进入商品追溯系统</h1>
+
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="login" role="button">登录</a>
+  </p>
+    <p class = "lead">
+        <a class ="btn btn-primary btn-lg" href ="register" role = "button">注册</a>
+    </p>
+    <p ><a href="home2" class="login-text ">我是游客，跳过</a></p>
+</div>
+
+{% endblock content %}
+
+{% block head %}
+    {{ super() }}
+    {% include '_head.html' %}
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+    </a>
+{% endblock %}

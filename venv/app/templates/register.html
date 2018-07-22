@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+<title>注册页</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+
+<!-- Custom-Stylesheet-Links -->
+<!-- Bootstrap-CSS --> 	<link rel="stylesheet" href="../static/css/bootstrap.min.css"	type="text/css" media="all">
+<!-- Index-Page-CSS --> <link rel="stylesheet" href="../static/css/style.css?v=2020" type="text/css" media="all">
+<!-- Portfolio-CSS --> 	<link rel="stylesheet" href="../static/css/smoothbox.css" 	type="text/css" media="all">
+<!-- //Custom-Stylesheet-Links -->
+
+<!-- Font-Awesome-File-Links -->
+<!-- CSS --> <link rel="stylesheet" href="../static/css/font-awesome.min.css" 	 type="text/css" media="all">
+<!-- TTF --> <link rel="stylesheet" href="../static/fonts/fontawesome-webfont.ttf" type="text/css" media="all">
+<!-- //Font-Awesome-File-Links -->
+
+<!-- Supportive-JavaScript --> <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+
+	<!-- Header -->
+	<div class="header-aits" id="home">
+		<div class="header-info-w3ls">
+			<div class="top-contact-aits-w3l container">
+				<p>Call us directly @ +001813799371820 or mail us to <a class="mail" href="mailto:mail@example.com">992999406@qq.com</a> between 10:00 and 16:00</p>
+			</div>
+
+			<!-- Navigation -->
+			<nav class="navbar container navbar-inverse navbar-default">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Logo -->
+					<div class="logo">
+						<a class="navbar-brand logo-w3l button" >商品追踪溯源系统</a>
+					</div>
+					<!-- //Logo -->
+				</div>
+
+
+			</nav><!-- //Navigation -->
+
+
+		</div>
+
+		<div class="details-w3lsagile" id="details">
+		    <div class="container">
+		    </div>
+		    <div class="clearfix"></div>
+	    </div>
+    </div>
+
+	<!-- //Header -->
+
+	<div class="details-w3lsagile" id="details">
+		<div class="container">
+			<div class="booking-form-aits">
+                    <div class="row">
+                        <input type="text"  class="col-sm-offset-3" name="username" id="username" placeholder="用户名" required="">
+                        <input type="password" class="col-sm-offset-3" name="password" id="password" placeholder="密码" required="">
+						<input type="password" class="col-sm-offset-3" name="password2" id="password2" placeholder="密码" required="">
+                    </div>
+                        <div class="row">
+                            <center>
+                            <div class="form-group">
+                                <label for="exampleSelect1">请选择您的身份</label>
+                                <p></p><select class="form-control" id="selectid1"  style="height:40px;width:449px;font-size:14px; " >
+                                    <option selected="">原产地</option>
+                                    <option value="原产地">原产地</option>
+                                    <option value="加工厂">加工厂</option>
+                                    <option value="运输厂">运输厂</option>
+                                    <option value="入库">入库</option>
+                                    <option value="销售">销售</option>
+                                </select>
+                            </div>
+                            </center>
+                        </div>
+				<script type="text/javascript">
+				$(document).ready(function(){
+				$("#button1").on('click',function(event){
+                var objS=document.getElementById('selectid1');
+                var identity=objS.options[objS.selectedIndex].value;
+                var data={'username':'','password':'','password2':'','city':''};
+                data['username']=$("#username").val();
+                data['password']=$("#password").val();
+                data['password2']=$("#password2").val();
+                data['city']=identity;
+                $.ajax({
+                    type: 'POST',
+                    url:"/register",
+                    data:JSON.stringify(data),
+                    contentType: 'application/json; charset=UTF-8',
+                    dataType:'json',
+                    success: function(result) {
+                        if(result){
+                            if(result.if=='0'){
+                                alert('该用户名已存在！')
+                            }
+                            else if(result.if =='1'){
+                                alert('内容填写不完整！');
+                            }
+                            else if(result.if =='2'){
+                                alert('两次密码输入不一致！');
+                            }
+                            else if(result.if =='3'){
+                                alert('注册成功！');
+                            }
+
+                        }
+                    },
+                    error: function() {
+                    alerrt('保存失败！');
+                    }
+                });
+            });
+        });
+        </script>
+					<center>
+					<div class="send-button agileits w3layouts">
+                        <br>
+						<button class="btn btn-primary" id="button1" type="button">注册<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary col-sm-offset-1" type="button" onclick="javascript:window.location.href='http://127.0.0.1:5000/login'">返回<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+
+
+					</div>
+					</center>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="clearfix"></div>
+
+
+	<!-- Footer -->
+	<div class="footerw3layouts" id="footer">
+		<div class="container">
+
+			<div class="col-md-offset-8 col-sm-offset-8 col-md-2 col-sm-2 footer-grid footer-grid-1">
+
+			</div>
+
+			<div class="col-md-2 col-sm-2 footer-grid footer-grid-2">
+				<ul>
+					<li>基于区块链的</li>
+					<li>商品追踪溯源系统</li>
+				</ul>
+			</div>
+
+
+			<div class="clearfix"></div>
+
+			<!-- Copyright -->
+			<div class="copyright">
+				<p>Copyright &copy; 2018.Team 332 All rights reserved.</p>
+			</div>
+			<!-- //Copyright -->
+
+		</div>
+	</div>
+	<!-- Footer -->
+
+
+
+
+
+
+</body>
+<!-- //Body -->
+
+</html>
